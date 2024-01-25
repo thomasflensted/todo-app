@@ -102,8 +102,10 @@ function App() {
 
       </main>
 
-      {theme === "light" && <MdDarkMode className="theme-icon" onClick={() => setTheme("dark")} />}
-      {theme === "dark" && <MdLightMode className="theme-icon" onClick={() => setTheme("light")} />}
+      <footer className="footer">
+        {theme === "light" && <MdDarkMode className="theme-icon" onClick={() => setTheme("dark")} />}
+        {theme === "dark" && <MdLightMode className="theme-icon" onClick={() => setTheme("light")} />}
+      </footer>
 
     </div>
   );
