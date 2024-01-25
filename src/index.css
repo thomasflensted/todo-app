@@ -79,6 +79,7 @@ li {
   overflow: hidden;
   max-width: 300px;
   margin: 0 4rem;
+  text-overflow: ellipsis;
 }
 
 .container {
