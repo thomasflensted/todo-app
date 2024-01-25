@@ -6,10 +6,12 @@ import Items from "./components/Items";
 import AddItem from "./components/AddItem";
 import DeleteChecked from "./components/DeleteChecked";
 import DeleteList from "./components/DeleteList";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { resetIDs, sortArr } from "./components/helperFuncs";
 
 function App() {
 
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const [data, setData] = useState(JSON.parse(localStorage.getItem("data")) || [{ name: "Todo", id: 1, items: [] }]);
   const [currentTab, setCurrentTab] = useState(parseInt(localStorage.getItem("tab")) || 0);
   const [search, setSearch] = useState('');
@@ -22,8 +24,10 @@ function App() {
   useEffect(() => {
     document.title = data[currentTab].name;
     document.getElementById("todo-search").value = "";
+    document.body.classList = theme;
     setSearch("");
-  }, [currentTab, data])
+    localStorage.setItem("theme", theme);
+  }, [currentTab, data, theme])
 
   const handleCheckClick = (id) => {
     const updatedItems = data[currentTab].items.map(item => id === item.id ? { ...item, checked: !item.checked } : item);
@@ -68,7 +72,6 @@ function App() {
 
       <main className="container">
         <div className="todo">
-
           <Heading
             currentTab={currentTab}
             setData={setData}
@@ -98,6 +101,10 @@ function App() {
           setCurrentTab={setCurrentTab} />
 
       </main>
+
+      {theme === "light" && <MdDarkMode className="theme-icon" onClick={() => setTheme("dark")} />}
+      {theme === "dark" && <MdLightMode className="theme-icon" onClick={() => setTheme("light")} />}
+
     </div>
   );
 }

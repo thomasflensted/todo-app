@@ -9,11 +9,20 @@ html {
 }
 
 :root {
+  --separation: 2rem;
+  --corners: 3px;
+}
+
+.dark {
+  --fg: #f1f2f6;
+  --bg: #1d1d1d;
+  --border: 1px solid white;
+}
+
+.light {
   --bg: white;
   --fg: black;
   --border: 1px solid black;
-  --separation: 2rem;
-  --corners: 3px;
 }
 
 /* FONT WEIGHTS: 100, 300, 400, 600 */
@@ -30,9 +39,6 @@ body {
   background: var(--bg);
   color: var(--fg);
   font-family: "roc-grotesk", sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 ul,
@@ -69,7 +75,6 @@ li {
   border: .25px solid #bdc3c7;
   position: absolute;
   right: 0;
-
 }
 
 .tab-title {
@@ -84,7 +89,7 @@ li {
 
 .container {
   min-width: 35%;
-  margin: 2rem 1rem 3rem;
+  margin: 2rem 1rem 2rem;
   animation: slide-up 1s cubic-bezier(0.800, 0.110, 0.110, 0.800);
 }
 
@@ -173,7 +178,6 @@ form {
 
 .item {
   flex-direction: row;
-  justify-content: space-between;
 }
 
 .item-content {
@@ -225,6 +229,19 @@ form {
 }
 
 .center {
+  justify-content: center;
+}
+
+.theme-icon {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.footer {
+  position: absolute;
+  bottom: 2rem;
+  width: 100%;
+  display: flex;
   justify-content: center;
 }
 
