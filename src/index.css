@@ -48,36 +48,42 @@ li {
 .tabs {
   overflow: auto;
   white-space: nowrap;
-  padding: 2rem 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
   background: var(--bg);
+  border-bottom: .5px solid #bdc3c7
 }
 
 .tab {
+  padding: 2rem 0;
   display: flex;
-  margin: 0 1rem;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  position: relative;
 }
 
-.selected-tab {
-  font-weight: 600;
+.divider {
+  height: 30px;
+  border: .25px solid #bdc3c7;
+  position: absolute;
+  right: 0;
+
 }
 
 .tab-title {
   font-weight: 300;
   font-size: 1.5rem;
-  cursor: pointer;
   white-space: nowrap;
   overflow: hidden;
-  max-width: 200px;
+  max-width: 300px;
+  margin: 0 4rem;
 }
 
 .container {
   min-width: 35%;
-  margin: 1rem 1rem 3rem;
+  margin: 2rem 1rem 3rem;
   animation: slide-up 1s cubic-bezier(0.800, 0.110, 0.110, 0.800);
 }
 
@@ -120,11 +126,6 @@ li {
   border: none;
   outline: none;
   font-weight: 600;
-}
-
-.divider {
-  width: 50%;
-  border: var(--border);
 }
 
 .fw {

@@ -27,10 +27,8 @@ const NavBar = ({ data, currentTab, setCurrentTab, setData }) => {
                         currentTab={currentTab}
                         setCurrentTab={setCurrentTab} />
                 )}
-                <li className="tab-list-item">
-                    <div className="tab" onClick={createNewTab}>
-                        <FaPlus className='tab-title' />
-                    </div>
+                <li className="tab center" onClick={createNewTab}>
+                    <FaPlus className='tab-title' />
                 </li>
             </ul>
         </nav>

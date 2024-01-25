@@ -7,7 +7,8 @@ const Tab = ({ id, heading, currentTab, setCurrentTab }) => {
     return (
         <li className="tab" onClick={() => setCurrentTab(id - 1)}>
             <h2 style={selected ? { fontWeight: "600" } : null} className='tab-title'>{heading}</h2>
-        </li >
+            <div className="divider"></div>
+        </li>
     )
 }
 
