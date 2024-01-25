@@ -8,7 +8,7 @@ const Item = ({ id, item, checked, handleCheckClick, handleDelete }) => {
 
     return (
         <li key={id} className='fw item'>
-            <label className="item-content">
+            <label className="item-content content-left">
                 {checked
                     ? <GrCheckboxSelected className='checkbox' onClick={() => handleCheckClick(id)} />
                     : <GrCheckbox className='checkbox' onClick={() => handleCheckClick(id)} />}
@@ -19,7 +19,7 @@ const Item = ({ id, item, checked, handleCheckClick, handleDelete }) => {
                     style={checked ? checkedStyle : null}>{item}</h3>
             </label>
             <div className="item-content">
-                <FiTrash onClick={() => handleDelete(id)} />
+                <FiTrash className="delete-icon" onClick={() => handleDelete(id)} />
             </div>
         </li >
     )

@@ -35,8 +35,10 @@ body {
   align-items: center;
 }
 
-ul {
+ul,
+li {
   width: 100%;
+  list-style-type: none;
 }
 
 .navbar {
@@ -44,25 +46,20 @@ ul {
 }
 
 .tabs {
+  overflow: auto;
+  white-space: nowrap;
+  padding: 2rem 0;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   background: var(--bg);
 }
 
-.tab-list-item {
-  list-style-type: none;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
 .tab {
-  padding: 1rem 12rem;
-  width: 100%;
-  justify-content: center;
   display: flex;
+  margin: 0 1rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .selected-tab {
@@ -73,12 +70,14 @@ ul {
   font-weight: 300;
   font-size: 1.5rem;
   cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 200px;
 }
 
 .container {
-  min-width: 500px;
-  margin-top: 3rem;
-  margin-bottom: 2rem;
+  min-width: 35%;
+  margin: 1rem 1rem 3rem;
   animation: slide-up 1s cubic-bezier(0.800, 0.110, 0.110, 0.800);
 }
 
@@ -106,6 +105,14 @@ ul {
 
 .todo-heading {
   font-size: 2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 450px;
+}
+
+.delete-icon {
+  margin-left: 1.5rem;
 }
 
 .heading-input {
@@ -175,13 +182,21 @@ form {
   font-size: 1.5rem;
 }
 
+.content-left {
+  flex-grow: 1;
+  width: 100%;
+}
+
 .item-text {
   font-size: 1.5rem;
   font-weight: 300;
   transform: translateY(5%);
-  border: none;
   outline: none;
   font-family: "roc-grotesk", sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 400px;
 }
 
 .item-text:hover {
@@ -194,6 +209,7 @@ form {
 
 .checkbox {
   margin-right: 1rem;
+  font-size: 1.5rem;
 }
 
 .no-items-heading {
@@ -223,5 +239,33 @@ form {
   100% {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    min-width: 60%;
+  }
+
+  .item-text {
+    width: 200px;
+  }
+
+  .todo-heading {
+    width: 400px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .container {
+    min-width: 90%;
+  }
+
+  .item-text {
+    width: 250px;
+  }
+
+  .todo-heading {
+    width: 300px;
   }
 }
