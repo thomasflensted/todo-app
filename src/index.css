@@ -184,6 +184,10 @@ form {
   font-family: "roc-grotesk", sans-serif;
 }
 
+.item-text:hover {
+  text-decoration: line-through;
+}
+
 .item-content input[type=checkbox] {
   display: none;
 }

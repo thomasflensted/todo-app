@@ -1,2 +1,0 @@
-Option to delete tab
-Highlight current tab
