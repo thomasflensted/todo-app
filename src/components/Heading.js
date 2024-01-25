@@ -3,7 +3,6 @@ import { CiEdit } from "react-icons/ci";
 
 const Heading = ({ currentTab, setData, data }) => {
 
-    const [isHovering, setIsHovering] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
     const [inputValue, setInputValue] = useState(data[currentTab].name);
 
@@ -36,7 +35,7 @@ const Heading = ({ currentTab, setData, data }) => {
 
     return (
         <header>
-            <div className="heading" onMouseOver={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
+            <div className="heading">
                 {!isEditing
                     ? <h1 className="todo-heading">{data[currentTab].name}</h1>
                     : <input
@@ -48,7 +47,7 @@ const Heading = ({ currentTab, setData, data }) => {
                         onBlur={() => handleBlur(data[currentTab].id)}
                         value={inputValue}></input>
                 }
-                {isHovering && <CiEdit className='editing-icon' onClick={handleClick} />}
+                <CiEdit className='editing-icon' onClick={handleClick} />
             </div>
         </header>
     )
