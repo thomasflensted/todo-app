@@ -237,14 +237,6 @@ form {
   margin-bottom: 2rem;
 }
 
-.footer {
-  position: absolute;
-  bottom: 2rem;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
 @keyframes slide-up {
   0% {
     transform: translateY(100%);
