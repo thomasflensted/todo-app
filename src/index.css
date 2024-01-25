@@ -28,10 +28,12 @@ html {
 /* FONT WEIGHTS: 100, 300, 400, 600 */
 
 .App,
-#root {
+#root,
+body {
   width: 100%;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
   align-items: center;
 }
 
@@ -89,8 +91,15 @@ li {
 
 .container {
   min-width: 35%;
-  margin: 2rem 1rem 2rem;
+  margin: 2rem;
   animation: slide-up 1s cubic-bezier(0.800, 0.110, 0.110, 0.800);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.footer {
+  margin-bottom: 2rem;
 }
 
 .todo {
@@ -234,7 +243,6 @@ form {
 
 .theme-icon {
   font-size: 2.5rem;
-  margin-bottom: 2rem;
 }
 
 @keyframes slide-up {
