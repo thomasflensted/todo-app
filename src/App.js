@@ -60,6 +60,8 @@ function App() {
     setData(updatedData);
   }
 
+  const date = new Date();
+
   return (
     <div className="App">
 
@@ -105,6 +107,7 @@ function App() {
       <footer className="footer">
         {theme === "light" && <MdDarkMode className="theme-icon" onClick={() => setTheme("dark")} />}
         {theme === "dark" && <MdLightMode className="theme-icon" onClick={() => setTheme("light")} />}
+        <a href="http://thomasflensted.com" target="_blank" rel="noopener noreferrer">{`Thomas Flensted ${date.getFullYear()}`}</a>
       </footer>
 
     </div>
