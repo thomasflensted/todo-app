@@ -56,7 +56,6 @@ function App() {
     const updatedItems = [...data[currentTab].items, newItem];
     const sorted = sortArr(updatedItems);
     var updatedData = [...data];
-    console.log("some change");
     updatedData[currentTab].items = sorted;
     setData(updatedData);
   }

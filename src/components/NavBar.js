@@ -1,13 +1,15 @@
 import React from 'react'
 import { FaPlus } from "react-icons/fa";
 import Tab from './Tab';
+import * as Dialog from '@radix-ui/react-dialog';
 
 const NavBar = ({ data, currentTab, setCurrentTab, setData }) => {
 
-    const createNewTab = () => {
+    var newName = "";
+    const createNewTab = (newName) => {
         const nextId = data.length + 1;
         const newList = {
-            name: "My List",
+            name: newName ? newName : "My New List",
             id: nextId,
             items: []
         }
@@ -27,11 +29,29 @@ const NavBar = ({ data, currentTab, setCurrentTab, setData }) => {
                         currentTab={currentTab}
                         setCurrentTab={setCurrentTab} />
                 )}
-                <li className="tab center" onClick={createNewTab}>
-                    <FaPlus className='tab-title' />
-                </li>
+
+                <Dialog.Root>
+
+                    <Dialog.Trigger asChild>
+                        <li className="tab center">
+                            <FaPlus className='tab-title' />
+                        </li>
+                    </Dialog.Trigger>
+                    <Dialog.Portal>
+                        <Dialog.Overlay className="DialogOverlay" />
+                        <Dialog.Content className='DialogContent'>
+                            <Dialog.Title className='DialogTitle'>Provide A Name For Your List</Dialog.Title>
+                            <form action="submit" onSubmit={(e) => e.preventDefault()}>
+                                <input placeholder='My New List' className="todo-search" autoFocus onChange={(e) => newName = e.target.value} />
+                                <Dialog.Close asChild>
+                                    <button type='submit' onClick={() => createNewTab(newName)} className="btn confirm-btn">Confirm</button>
+                                </Dialog.Close>
+                            </form>
+                        </Dialog.Content>
+                    </Dialog.Portal>
+                </Dialog.Root>
             </ul>
-        </nav>
+        </nav >
     )
 }
 

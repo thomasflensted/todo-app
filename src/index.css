@@ -307,6 +307,13 @@ form {
   padding: 1rem;
 }
 
+.confirm-btn {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-left: 0;
+}
+
 @keyframes slide-up {
   0% {
     transform: translateY(100%);
@@ -338,6 +345,10 @@ form {
 }
 
 @media only screen and (max-width: 700px) {
+  .DialogContent {
+    width: 80%;
+  }
+
   .container {
     min-width: 90%;
   }

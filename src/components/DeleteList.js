@@ -6,7 +6,7 @@ const DeleteList = ({ data, setData, currentTab, setCurrentTab }) => {
 
     const handleDelete = () => {
         if (data.length === 1) {
-            setData([{ name: "My List", id: 1, items: [] }])
+            setData([{ name: "My New List", id: 1, items: [] }])
             setCurrentTab(0);
         } else {
             var updatedData = data.filter(list => list.id !== data[currentTab].id)
@@ -19,14 +19,14 @@ const DeleteList = ({ data, setData, currentTab, setCurrentTab }) => {
 
     return (
         <div className="fw">
-            <Dialog.Root>
-                <Dialog.Trigger asChild>
-                    <button
-                        type="submit"
-                        className="btn delete-all-btn">Delete List
-                    </button>
-                </Dialog.Trigger>
-                <Dialog.Portal>
+            {data[currentTab].items.length > 0
+                ? <Dialog.Root>
+                    <Dialog.Trigger asChild>
+                        <button
+                            type="submit"
+                            className="btn delete-all-btn">Delete List
+                        </button>
+                    </Dialog.Trigger>
                     <Dialog.Overlay className="DialogOverlay" />
                     <Dialog.Content className="DialogContent">
                         <Dialog.Title className="DialogTitle">Delete List?</Dialog.Title>
@@ -42,8 +42,9 @@ const DeleteList = ({ data, setData, currentTab, setCurrentTab }) => {
                             </Dialog.Close>
                         </div>
                     </Dialog.Content>
-                </Dialog.Portal>
-            </Dialog.Root>
+                </Dialog.Root>
+                : <button type="submit" className="btn delete-all-btn" onClick={handleDelete}>Delete List
+                </button>}
         </div>
     )
 }
