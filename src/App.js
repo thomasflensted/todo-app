@@ -72,6 +72,7 @@ function App() {
 
       <main className="container">
         <div className="todo">
+
           <Heading
             currentTab={currentTab}
             setData={setData}

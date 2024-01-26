@@ -102,6 +102,24 @@ li {
   margin-bottom: 2rem;
 }
 
+.modal {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--fg);
+  border: var(--border);
+  padding: 2rem;
+  font-size: 1.5rem;
+}
+
+.modal-btn {
+  padding: 1rem !important;
+}
+
+.btn {
+  flex-grow: 1;
+}
+
 .todo {
   border: var(--border);
   padding: 2rem;
@@ -243,6 +261,50 @@ form {
 
 .theme-icon {
   font-size: 2.5rem;
+}
+
+.DialogOverlay {
+  background: var(--bg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: .9;
+  place-items: center;
+  overflow-y: auto;
+}
+
+.DialogContent {
+  border: var(--border);
+  border-radius: 0;
+  width: 20%;
+  padding: 2rem;
+  text-align: center;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 15%;
+  background: var(--bg);
+}
+
+.DialogTitle {
+  margin-bottom: 1rem;
+}
+
+.DialogDescription {
+  font-size: 1.35rem;
+  line-height: 2rem;
+}
+
+.btn-container {
+  width: 100%;
+  display: flex;
+  margin-top: 1rem;
+}
+
+.delete-list-btn {
+  padding: 1rem;
 }
 
 @keyframes slide-up {
